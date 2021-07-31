@@ -1,0 +1,177 @@
+/* HEADER AND NAV BAR STYLING START */
+header {
+  width: 100%;
+  height: var(--header_height);
+  background: var(--bg_main);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: var(--secondary_font);
+  padding: 0 6rem;
+
+  color: var(--text_white);
+}
+
+/* Header logo Anchor Style */
+.logo a {
+  font-size: 2.2rem;
+  font-weight: 900;
+  font-variant: small-caps;
+  color: var(--text_white);
+  text-decoration: none;
+}
+
+/* Nav Menu List Style */
+.nav_list {
+  display: flex;
+  list-style-type: none;
+}
+
+/* Nav menu list items style */
+.nav_list li {
+  padding: 0 1.5rem;
+  transition: transform 0.4s linear;
+}
+
+/* Nav Menu List Anchor tags Style */
+.nav_list a {
+  text-decoration: none;
+  color: var(--text_white);
+
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: opacity 0.4s linear;
+}
+
+.nav_list li:hover {
+  transform: scale(1.03);
+}
+
+.nav_list a:hover {
+  opacity: 0.9;
+  color: var(--bg_hover);
+}
+/* Nav Menu List Anchor tags Style End */
+
+/* Nav Bar Search tag Style Start */
+.nav_search {
+  width: 40%;
+  min-width: 320px;
+  max-width: 600px;
+
+  background: var(--text_white);
+  color: var(--text_main);
+}
+
+.nav_search input {
+  background: none;
+  border: none;
+  outline: none;
+  width: calc(100% - 55px);
+  padding: 0.7rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  opacity: 0.8;
+  font-family: var(--secondary_font);
+}
+.nav_search button {
+  min-width: 55px;
+  background: none;
+  background-blend-mode: overlay;
+  border: none;
+  cursor: pointer;
+
+  color: var(--bg_main);
+  font-size: 2rem;
+}
+
+.nav_hamburger_toogle {
+  display: none;
+}
+
+#nav_checkbox {
+  display: none;
+}
+
+/* MEDIA QURIES FOR NAV AND TO SHOW HAMBURGER MENU  START*/
+@media screen and (max-width: 1024px) {
+  header .nav_search {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: var(--header_height);
+    left: 0;
+    width: 100%;
+    /* height: calc(100% - 75px); to give remaining height to nav*/
+    background: var(--bg_secondary);
+    border-top: 2px ridge var(--bg_secondary);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: scaleY(0) translateZ(-10px);
+    transform-origin: right top;
+    transition: transform 0.5s linear, opacity 0.7s linear;
+    opacity: 0.5;
+  }
+  .nav_list {
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+  }
+  .nav_list li {
+    line-height: 4;
+    text-align: center;
+    width: 100%;
+    transition: background 1s ease-in-out;
+  }
+
+  .nav_list li:hover {
+    background: var(--bg_hover);
+  }
+
+  .nav_list a {
+    font-size: 2rem;
+    font-weight: 800;
+    transition: color 1s ease-in-out;
+  }
+  .nav_list a:hover {
+    color: var(--text_main);
+  }
+  .nav_hamburger_toogle {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 900;
+  }
+
+  .nav_hamburger_toogle i {
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+  }
+
+  .nav_hamburger_toogle i:hover {
+    opacity: 0.8;
+  }
+
+  #nav_checkbox:checked ~ nav {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+/* MEDIA QURIES FOR NAV AND TO SHOW HAMBURGER MENU END*/
+
+@media screen and (max-width: 470px) {
+  header {
+    padding: 0 3rem;
+    --header_height: 70px;
+  }
+}

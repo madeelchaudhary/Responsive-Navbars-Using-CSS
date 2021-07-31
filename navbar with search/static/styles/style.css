@@ -1,0 +1,55 @@
+@import url(components/header.css);
+
+/* Removing ALL Default Browser Default Styles */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Creating Global Varibes*/
+:root {
+  --bg_main: slateblue;
+  --bg_secondary: lightblue;
+  --bg_hover: lavender;
+
+  --main_font: "Poppins", sans-serif;
+  --secondary_font: "Ubuntu", sans-serif;
+  --fancy_font: "Pacifico", cursive;
+
+  --text_white: white;
+  --text_main: #333;
+
+  --header_height: 75px;
+}
+
+/* Changing font size to 10PX of root element */
+html {
+  font-size: 11px;
+}
+
+/* MEDIA QURIES FOR  HTML  FONT SIZE TO ADD RESPONSIVE ON SMALL SCREEN SIZES*/
+
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 2000px) {
+  html {
+    font-size: 13.5px;
+  }
+}

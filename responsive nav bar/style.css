@@ -1,0 +1,172 @@
+/* CUSTOM PROPERTIES GLOBAL START */
+:root {
+  --main_bg_clr: mediumslateblue;
+  --secondary-bg-clr: slateblue;
+
+  --white-text: white;
+  --main-font: "Baloo Tammudu 2", cursive;
+}
+
+/* RESETING BROWSER PREDEFINED STYLES */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Changing font size to 10PX of root element */
+html {
+  font-size: 11px;
+}
+
+/* HEADER AND NAVIGATION MENY STYLING START */
+.header {
+  width: 100%;
+  height: 75px;
+  background: var(--main_bg_clr);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 6rem;
+
+  color: var(--white-text);
+}
+
+/* Header logo Anchor Style */
+.logo a {
+  font-size: 2.2rem;
+  font-weight: 900;
+  font-variant: small-caps;
+  color: var(--white-text);
+  text-decoration: none;
+}
+
+/* Nav Menu List Style */
+.nav_menu ul {
+  display: flex;
+  list-style-type: none;
+}
+
+/* Nav menu list items style */
+.nav_menu_items {
+  padding: 0 1.5rem;
+  transition: transform 0.4s linear;
+}
+
+/* Nav Menu List Anchor tags Style */
+.nav_menu_items a {
+  transition: opacity 0.4s linear;
+  text-decoration: none;
+  color: var(--white-text);
+
+  font-family: var(--main-font);
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav_menu_items:hover {
+  transform: scale(1.02);
+}
+.nav_menu_items:hover a {
+  opacity: 0.9;
+}
+/* Nav Menu List Anchor tags Style End */
+
+.nav_hamburger_toogle {
+  display: none;
+}
+
+.header input {
+  display: none;
+}
+
+/* MEDIA QURIES FOR NAV AND TO SHOW HAMBURGER MENU  START*/
+@media screen and (max-width: 768px) {
+  .nav_menu {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 75px);
+    background: var(--secondary-bg-clr);
+    border-top: 2px ridge var(--secondary-bg-clr);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: scaleY(0) translateZ(-10px);
+    transform-origin: right top;
+    transition: transform 0.5s linear, opacity 0.7s linear;
+    opacity: 0.5;
+  }
+  .nav_menu ul {
+    flex-direction: column;
+  }
+  .nav_menu_items {
+    line-height: 4;
+  }
+  .nav_menu_items a {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+  .nav_hamburger_toogle {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 900;
+  }
+
+  .nav_hamburger_toogle i {
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+  }
+
+  .nav_hamburger_toogle i:last-child {
+    display: none;
+  }
+
+  .nav_hamburger_toogle i:last-child:hover {
+    transform: rotateZ(45deg);
+  }
+
+  .nav_hamburger_toogle i:hover {
+    opacity: 0.9;
+    color: lightgray;
+  }
+
+  .header input:checked ~ .nav_menu {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  .header input:checked ~ .nav_hamburger_toogle i:first-child {
+    display: none;
+  }
+
+  .header input:checked ~ .nav_hamburger_toogle i:last-child {
+    display: block;
+    font-size: 2.5rem;
+  }
+}
+/* MEDIA QURIES FOR NAV AND TO SHOW HAMBURGER MENU  END*/
+
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 9px;
+  }
+  .header {
+    padding: 0 3rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 10px;
+  }
+}
