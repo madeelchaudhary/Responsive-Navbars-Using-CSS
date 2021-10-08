@@ -59,6 +59,7 @@ header {
 
 /* Nav Bar Search tag Style Start */
 .nav_search {
+  position: relative;
   width: 40%;
   min-width: 320px;
   max-width: 600px;
@@ -71,22 +72,26 @@ header {
   background: none;
   border: none;
   outline: none;
-  width: calc(100% - 55px);
+  width: 100%;
   padding: 0.7rem;
   font-size: 1.4rem;
   font-weight: 500;
   opacity: 0.8;
   font-family: var(--secondary_font);
 }
-.nav_search button {
-  min-width: 55px;
+.nav_search label {
+  position: absolute;
+  right: 0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  /* min-width: 55px; */
   background: none;
   background-blend-mode: overlay;
   border: none;
-  cursor: pointer;
 
   color: var(--bg_main);
   font-size: 2rem;
+  pointer-events: none;
 }
 
 .nav_hamburger_toogle {
